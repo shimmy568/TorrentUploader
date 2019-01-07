@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Shimmy's Torrent Upload Tool</title>
+</head>
+
+<body>
+
+    {{!-- Navbar start --}}
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Torrent Upload Tool</a>
+        </div>
+    </nav>
+
+    {{!-- Navbar end --}}
+
+    <div class="container">
+        {{#if item}}
+        <div class="row">
+            <div class="col offset-s3 s6">
+                <h3>{{item.title}}</h3>
+                <p>{{item.description}}</p>
+                <form action="/add/{{item.name}}" method="post" enctype="multipart/form-data">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>File</span>
+                            <input type="file" name="files" multiple>
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Upload the shit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        {{else}}
+        <div class="row">
+            <p>This is not a valid path, please go back to the <a href="/">main page</a>.</p>
+        </div>
+        {{/if}}
+    </div>
+</body>
+
+</html>

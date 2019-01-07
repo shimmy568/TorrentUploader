@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <title>Shimmy's Torrent Upload Tool</title>
+</head>
+
+<body>
+
+    {{!-- Navbar start --}}
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Torrent Upload Tool</a>
+        </div>
+    </nav>
+
+    {{!-- Navbar end --}}
+
+    <div class="container">
+        {{!-- List paths start --}}
+        {{#each paths}}
+        <div class="row">
+            <div class="col offset-s3 s6">
+                <h3 class="header">{{this.title}}</h3>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        {{#if image-path}}
+                        <img src="/{{image-path}}">
+                        {{else}}
+                        <img src="https://lorempixel.com/100/190/nature/6">
+                        {{/if}}
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>{{this.description}}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="/add/{{this.name}}">Add files to download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{!-- List paths end --}}
+    </div>
+</body>
+
+</html>

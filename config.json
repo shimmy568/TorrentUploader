@@ -1,0 +1,19 @@
+{
+    "port": 8080,
+    "paths": [
+        {
+            "download-path": "./anime/",
+            "name": "anime",
+            "image-path": "anime.png",
+            "title": "Anime",
+            "description": "Put weeb shit here"
+        },
+        {
+            "download-path": "./movies/",
+            "name": "movies",
+            "image-path": "movies.jpg",
+            "title": "Movies",
+            "description": "Anything that is a feature length movie"
+        }
+    ]
+}

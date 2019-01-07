@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Shimmy's Torrent Upload Tool</title>
+</head>
+
+<body>
+    {{!-- Navbar start --}}
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Torrent Upload Tool</a>
+        </div>
+    </nav>
+
+    {{!-- Navbar end --}}
+
+    <div class="container">
+        {{#if files}}
+        <h3>Uploaded the following files</h3>
+
+        <ul>
+            {{#each files}}
+            <li>{{originalname}}</li>
+            {{/each}}
+        </ul>
+
+        <p>The will be downloaded and added soonish</p>
+        {{else}}
+        <div class="row">
+            <h3>Error uploading files</h3>
+        </div>
+
+        {{/if}}
+    </div>
+</body>
+
+</html>

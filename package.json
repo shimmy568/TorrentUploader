@@ -1,0 +1,15 @@
+{
+  "name": "torrent-upload",
+  "version": "1.0.0",
+  "author": "shimmy568",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --experimental-modules src/index.mjs"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "multer": "^1.4.1"
+  }
+}
